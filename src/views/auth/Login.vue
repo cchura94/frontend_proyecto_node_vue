@@ -14,9 +14,12 @@
 <script>
 import authService from "@/service/AuthService.js"
 import {ref} from "vue"
+import { useRouter } from 'vue-router'
 
 export default {
     setup(){
+        const router = useRouter()
+
         const usuario = ref({email: "", password: ""})
         const jwt = ref({})
         const errores = ref(null)
@@ -25,6 +28,11 @@ export default {
             try{
                 const {data} = await authService.login(usuario.value);
                 jwt.value = data
+
+                localStorage.setItem("access_token", data.access_token );
+
+                router.push({name: 'Perfil'})
+a
             }catch(error){
                 errores.value = error
             }
