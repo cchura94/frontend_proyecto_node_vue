@@ -48,6 +48,12 @@ const router = createRouter({
           name: 'Perfil',
           component: Perfil,
           meta: {requireAuth: true}
+        },
+        {
+          path: 'categoria',
+          name: 'Categoria',
+          component: () => import('../views/admin/Categoria.vue'),
+          meta: {requireAuth: true}
         }
       ]
     }
