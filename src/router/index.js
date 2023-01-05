@@ -5,6 +5,7 @@ import Login from '../views/auth/Login.vue'
 import Perfil from '../views/admin/Perfil.vue'
 import LayoutPagina from '../views/layout/LayoutPagina.vue'
 import LayoutAdmin from '../views/layout/LayoutAdmin.vue'
+import AppLayout from '@/layout/AppLayout.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,7 +42,7 @@ const router = createRouter({
     },
     {
       path: '/admin',
-      component: LayoutAdmin,
+      component: AppLayout,
       children: [
         {
           path: 'perfil',

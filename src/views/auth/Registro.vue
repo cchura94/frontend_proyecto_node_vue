@@ -9,13 +9,19 @@
     <input type="button" value="Registrarse" @click="registrarse">
 
 </div>
+
+<MiCarrito />
 </template>
 
 <script>
 import { ref } from "vue"
 import authService from "./../../service/AuthService"
+import MiCarrito from "../../components/Carrito.vue"
 
 export default {
+    components: {
+        MiCarrito
+    },
     setup(){
         const usuario = ref({})
 
@@ -24,8 +30,8 @@ export default {
         }
         return {
             usuario,
-            registrarse
-
+            registrarse,
+            
         }
     }
 

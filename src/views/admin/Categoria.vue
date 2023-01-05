@@ -10,6 +10,18 @@
   <input type="button" :value="(categoria.id)?'Modificar Categoria':'Guardar Categoria'" @click="guardarCategoria">
     <button @click="clearCategoria()">cancelar</button>
 
+    <DataTable :value="categorias" responsiveLayout="scroll">
+            <Column field="id" header="ID"></Column>
+            <Column field="nombre" header="NOMBRE"></Column>
+            <Column field="detalle" header="DETALLE"></Column>
+                <Column :exportable="false" style="min-width:8rem">
+                    <template #body="slotProps">
+                        <Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="editarCategoria(slotProps.data)" />
+                        <Button icon="pi pi-trash" class="p-button-rounded p-button-warning" @click="eliminarCategoria(slotProps.data)" />
+                    </template>
+                </Column>
+        </DataTable>
+
   <table border="1">
     <tr>
         <td>ID</td>
