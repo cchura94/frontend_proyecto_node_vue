@@ -55,6 +55,24 @@ const router = createRouter({
           name: 'Categoria',
           component: () => import('../views/admin/Categoria.vue'),
           meta: {requireAuth: true}
+        },
+        {
+          path: 'producto',
+          name: 'Producto',
+          component: () => import('../views/admin/Producto.vue'),
+          meta: {requireAuth: true}
+        },
+        {
+          path: 'pedido',
+          name: 'ListaPedido',
+          component: () => import('../views/admin/pedido/ListaPedido.vue'),
+          meta: {requireAuth: true}
+        },
+        {
+          path: 'pedido/nuevo',
+          name: 'NuevoPedido',
+          component: () => import('../views/admin/pedido/NuevoPedido.vue'),
+          meta: {requireAuth: true}
         }
       ]
     }
