@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const urlServidor = 'http://127.0.0.1:3000/api';
+const urlServidor = 'http://44.200.16.50:3000/api';
+// const urlServidor = 'http://127.0.0.1:3000/api';
 
 export const http = () => {
 
